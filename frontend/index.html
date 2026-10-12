@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="theme-color" content="#fff7ed">
+	<meta name="description" content="Pencatatan persediaan, transaksi, dan PPN usaha lilin aromaterapi.">
+	<title>Sekar Aromatherapy Candle | Sistem PPN Lilin Aromaterapi</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;600;700&family=Nunito:ital,wght@0,400;0,600;0,700;1,600;1,700&family=Nunito+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,600&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<div class="app-shell">
+		<aside class="sidebar" aria-label="Navigasi utama">
+			<a class="brand" href="#page-dashboard" data-page="dashboard" aria-label="Sekar Aromatherapy Candle, Dashboard">
+				<span class="brand-icon" aria-hidden="true">
+					<svg viewBox="0 0 48 48" fill="none" role="img" aria-label="Lilin dan bunga">
+						<path d="M23.8 12.5c-2.1-3.1.8-5.1 1.2-7.5 3.8 3.1 3.5 5.8 1.3 8.2" fill="#ffd180" stroke="#4a3a35" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+						<path d="M17 20c1.1-2.3 12.8-2.3 14 0l-1.8 21H18.7L17 20Z" fill="#fff1c9" stroke="#4a3a35" stroke-width="1.7" stroke-linejoin="round"/>
+						<path d="M17.4 23.5c3.6 1.7 9.5 1.6 13.2-.1M19 29c2.7 1.1 7.3 1.1 10 0" stroke="#c9a961" stroke-width="1.2" stroke-linecap="round"/>
+						<path d="M13.5 16.3c-3.3-2.6-5.6.8-3.5 3.4 2 2.6 5 1.2 5.4-1.1 1.4 1.9 4.6 1.8 5.3-1.4.7-3.2-3.3-4.5-5.3-1.4-.1-2.4-2.7-4.2-5.1-2.2-2.3 2 .3 4.8 3.2 4.6Z" fill="#fffdf4" stroke="#4a3a35" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+						<circle cx="15.5" cy="17.8" r="1.7" fill="#ffd54f" stroke="#4a3a35" stroke-width=".8"/>
+						<path d="M30.8 31.5c5.8-5.5 9.8-3.1 9.4.1-.5 3.4-5.5 4-9.4-.1Z" fill="#a5d6a7" stroke="#4a3a35" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+						<path d="M31.4 31.6c2.9-.3 5.1-.1 7.7.2M19 42h12" stroke="#4a3a35" stroke-width="1.5" stroke-linecap="round"/>
+					</svg>
+				</span>
+				<span class="brand-copy">
+					<strong>Sekar</strong>
+					<small>AROMATHERAPY CANDLE</small>
+					<span class="brand-tagline">Handcrafted Since 2024</span>
+				</span>
+			</a>
+
+			<nav class="primary-nav" aria-label="Menu utama">
+				<p class="nav-label">WORKSPACE</p>
+				<button class="nav-link is-active" type="button" data-page="dashboard" aria-current="page">
+					<span class="nav-icon" aria-hidden="true">🏠</span><span>Dashboard</span>
+				</button>
+				<button class="nav-link" type="button" data-page="produk">
+					<span class="nav-icon" aria-hidden="true">🛍️</span><span>Produk</span>
+				</button>
+				<button class="nav-link" type="button" data-page="supplier">
+					<span class="nav-icon" aria-hidden="true">🚚</span><span>Supplier</span>
+				</button>
+				<button class="nav-link" type="button" data-page="pembelian">
+					<span class="nav-icon" aria-hidden="true">📥</span><span>Pembelian</span>
+				</button>
+				<button class="nav-link" type="button" data-page="penjualan">
+					<span class="nav-icon" aria-hidden="true">📤</span><span>Penjualan</span>
+				</button>
+
+				<p class="nav-label nav-label--reports">FINANCE</p>
+				<button class="nav-link" type="button" data-page="jurnal">
+					<span class="nav-icon" aria-hidden="true">📒</span><span>Jurnal Umum</span>
+				</button>
+				<button class="nav-link" type="button" data-page="ppn">
+					<span class="nav-icon" aria-hidden="true">🧾</span><span>Laporan PPN</span>
+				</button>
+				<button class="nav-link" type="button" data-page="laba-rugi">
+					<span class="nav-icon" aria-hidden="true">📊</span><span>Laba Rugi</span>
+				</button>
+			</nav>
+
+			<div class="sidebar-note">
+				<span class="sidebar-note-icon" aria-hidden="true">✨</span>
+				<p>Catatan usaha, lebih tertata.</p>
+			</div>
+			<div class="sidebar-footer">
+				<span class="status-dot" aria-hidden="true"></span>
+				<span>PPN aktif <strong>11%</strong></span>
+			</div>
+		</aside>
+
+		<main class="main-content" id="content">
+			<header class="content-header">
+				<div>
+					<p class="eyebrow" id="page-eyebrow" aria-hidden="true">SEKAR · PANEL</p>
+					<h1 id="page-title">Selamat Datang 👋</h1>
+					<svg class="header-ornament" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+						<path d="M20 18c-5.3-8.8-12.2-4-7.1 1.4-8.6-3.1-10.1 4.5-.3 5.2-6.8 5.6-1.3 11.4 5.1 4.4-1.5 9.5 6.1 9.8 5.4.1 6.4 7 11.9 1.2 5.1-4.5 9.6-.7 8.1-8.1-.4-5.2 5.1-5.4-1.8-10.2-7.8-1.4Z" fill="#fffdf8" stroke="#4a3a35" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+						<circle cx="20" cy="21" r="4.1" fill="#ffd54f" stroke="#4a3a35" stroke-width="1.1"/>
+					</svg>
+					<p class="page-subtitle" id="page-subtitle">Ringkasan bisnis lilin Anda</p>
+				</div>
+				<div class="header-mark" aria-label="Lilin aromaterapi">
+					<span aria-hidden="true">🕯️</span>
+					<span>Usaha aromaterapi</span>
+				</div>
+			</header>
+
+			<section class="page-section is-active" id="page-dashboard" aria-labelledby="page-title">
+				<div class="section-toolbar">
+					<div>
+						<p class="section-kicker">OVERVIEW BULANAN</p>
+						<h2>Bisnis Anda, sekilas</h2>
+					</div>
+					<label class="field field--month" for="dashboard-month">
+						<span>Periode</span>
+						<input id="dashboard-month" name="bulan" type="month" data-month-filter>
+					</label>
+				</div>
+
+				<div class="stats-grid" aria-label="Ringkasan transaksi bulan ini">
+					<article class="stat-card stat-card--sales">
+						<div class="stat-card-top"><span>Total Penjualan</span><span class="stat-icon" aria-hidden="true">🌸</span></div>
+						<p class="stat-value" id="dashboard-total-penjualan">Rp0</p>
+						<p class="stat-caption">DPP penjualan</p>
+					</article>
+					<article class="stat-card stat-card--purchases">
+						<div class="stat-card-top"><span>Total Pembelian</span><span class="stat-icon" aria-hidden="true">🌼</span></div>
+						<p class="stat-value" id="dashboard-total-pembelian">Rp0</p>
+						<p class="stat-caption">DPP pembelian</p>
+					</article>
+					<article class="stat-card stat-card--output-tax">
+						<div class="stat-card-top"><span>PPN Keluaran</span><span class="stat-icon" aria-hidden="true">🌷</span></div>
+						<p class="stat-value" id="dashboard-ppn-keluaran">Rp0</p>
+						<p class="stat-caption">Pajak dari penjualan</p>
+					</article>
+					<article class="stat-card stat-card--input-tax">
+						<div class="stat-card-top"><span>PPN Masukan</span><span class="stat-icon" aria-hidden="true">🌿</span></div>
+						<p class="stat-value" id="dashboard-ppn-masukan">Rp0</p>
+						<p class="stat-caption">Pajak dari pembelian</p>
+					</article>
+				</div>
+
+				<article class="tax-balance-card">
+					<div class="tax-balance-art" aria-hidden="true">🧾</div>
+					<div class="tax-balance-copy">
+						<p class="section-kicker">PPN MASA PAJAK</p>
+						<h2>PPN Kurang/Lebih Bayar</h2>
+						<p id="dashboard-status">Menunggu ringkasan periode</p>
+					</div>
+					<strong class="tax-balance-value" id="dashboard-selisih">Rp0</strong>
+				</article>
+			</section>
+
+			<section class="page-section" id="page-produk" aria-labelledby="page-title" hidden>
+				<section class="overview-produk" aria-labelledby="overview-produk-title">
+					<header class="overview-header">
+						<p class="eyebrow">SEKAR AROMATHERAPY CANDLE</p>
+						<h2 id="overview-produk-title">Overview Produk</h2>
+						<p>Dua kategori produk kami dengan karakter berbeda</p>
+					</header>
+					<div class="overview-grid">
+						<article class="overview-card signature">
+							<div class="svg-illustration" aria-hidden="true">
+								<svg viewBox="0 0 100 120" width="100" height="120" fill="none" focusable="false">
+									<path d="M43 29c-5-8 3-12 4-19 8 7 7 14 3 20" fill="#ffb74d" stroke="#4a3a35" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+									<path d="M32 37c4-4 32-4 36 0l-3 62H35l-3-62Z" fill="#fbb6b0" stroke="#4a3a35" stroke-width="1.5" stroke-linejoin="round"/>
+									<path d="M33 42c9 3 25 3 34 0M37 51c7 2 17 2 26 0" stroke="#fff4e8" stroke-width="1.2" stroke-linecap="round"/>
+									<path d="M31 72c12 4 26 4 38 0v9c-12 4-26 4-38 0v-9Z" fill="#f5d98b" stroke="#4a3a35" stroke-width="1.5" stroke-linejoin="round"/>
+									<path d="m48 72 3 5 4-5m-4 5v4" stroke="#4a3a35" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+									<path d="M69 58c-7-5-5-12 1-12 2-7 10-6 11 0 7 2 6 10 0 12-2 7-10 7-12 0Z" fill="#fffdf4" stroke="#4a3a35" stroke-width="1.5" stroke-linejoin="round"/>
+									<circle cx="75" cy="53" r="3" fill="#ffd54f" stroke="#4a3a35" stroke-width="1.2"/>
+									<path d="M70 66c-9 0-13 6-9 10 4 4 9 1 11-4m3 3c-2 7 2 12 7 9 4-3 2-8-3-11" fill="#a5d6a7" stroke="#4a3a35" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+									<path d="m26 54-3-4m4-8-5-1m8-7-2-4m48 44 5-2m-3 8 4 2" stroke="#c9a961" stroke-width="1.4" stroke-linecap="round"/>
+									<path d="M39 103h22" stroke="#4a3a35" stroke-width="1.5" stroke-linecap="round"/>
+								</svg>
+							</div>
+							<span class="badge-jenis badge-signature">✨ SIGNATURE</span>
+							<h3>Signature</h3>
+							<p class="tagline">Exclusive · All Handmade</p>
+							<p class="deskripsi">Setiap lilin Signature dibuat dengan tangan, satu per satu, dengan bahan pilihan. Eksklusif, terbatas, dan penuh cerita. Harga pokok ditentukan manual sesuai resep produksi — kualitas premium, nilai lebih.</p>
+						</article>
+						<article class="overview-card essential">
+							<div class="svg-illustration" aria-hidden="true">
+								<svg viewBox="0 0 100 120" width="100" height="120" fill="none" focusable="false">
+									<path d="M47 43c-4-7 2-10 3-15 6 6 5 11 2 16" fill="#ffb74d" stroke="#4a3a35" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+									<path d="M30 51c4-3 36-3 40 0l-3 48H33l-3-48Z" fill="#fff9f5" stroke="#4a3a35" stroke-width="1.5" stroke-linejoin="round"/>
+									<path d="M31 55c10 3 28 3 38 0M38 103h24" stroke="#4a3a35" stroke-width="1.5" stroke-linecap="round"/>
+								</svg>
+							</div>
+							<span class="badge-jenis badge-essential">🌿 ESSENTIAL</span>
+							<h3>Essential</h3>
+							<p class="tagline">Practical · Ready to Sell</p>
+							<p class="deskripsi">Lilin Essential tersedia dari supplier terpilih atau hasil produksi mandiri. Praktis, terjangkau, siap dijual ulang. Harga pokok bisa diperbarui otomatis dari pembelian atau ditambah manual lewat tombol + Stok.</p>
+						</article>
+					</div>
+				</section>
+				<section class="info-box" aria-label="Panduan form produk">
+					<span class="icon" aria-hidden="true">ℹ️</span>
+					<div class="info-box__content">
+						<strong>Form ini untuk MENDAFTARKAN VARIAN BARU ke inventaris.</strong>
+						<p>✓ Kalau varian baru (misal Signature Rose, Signature Lavender)<br>→ isi form ini</p>
+						<p>✗ Kalau mau TAMBAH STOK produk yang sudah ada (misal Signature Lily) → jangan di sini.<br>Gunakan tombol '+ Tambah Stok' di tabel Inventaris di bawah.</p>
+					</div>
+				</section>
+				<section class="header-form">
+				<div class="section-toolbar">
+					<div><p class="section-kicker">KATALOG</p><h2>Kelola produk</h2></div>
+					<button class="button button--primary" type="button" id="product-add-button">+ Tambah Produk Baru</button>
+				</div>
+				<article class="surface form-surface">
+					<div class="surface-heading"><div><p class="section-kicker">MASTER PRODUK</p><h3 id="product-form-title">Tambah produk</h3></div></div>
+					<form id="product-form" class="entry-form">
+						<input type="hidden" id="product-id" name="id">
+						<label class="field" for="product-sumber"><span>Jenis Produk</span><select id="product-sumber" name="sumber" required><option value="signature" selected>Signature (Produksi)</option><option value="essential">Essential (Beli Jadi)</option></select></label>
+						<label class="field" for="product-aroma"><span>Aroma</span><select id="product-aroma" name="aroma" required><option value="">Pilih aroma</option><option value="__new__">+ Tambah Aroma Baru...</option></select></label>
+						<p class="product-name-preview field--wide" id="product-name-preview" aria-live="polite">Nama produk yang akan tersimpan: <strong>Pilih sumber dan aroma</strong></p>
+						<label class="field" for="product-harga-pokok"><span>Harga Pokok (HPP)/unit</span><input id="product-harga-pokok" name="harga_pokok" type="number" min="0" step="0.01" placeholder="0" required></label>
+						<label class="field" for="product-harga-jual"><span>Harga jual/unit</span><input id="product-harga-jual" name="harga_jual" type="number" min="0" step="0.01" placeholder="0" required></label>
+						<label class="field" for="product-stok"><span>Stok awal</span><input id="product-stok" name="stok" type="number" min="0" step="1" placeholder="0" required></label>
+						<div class="form-actions"><button class="button button--primary" type="submit" id="product-submit">Simpan produk</button><button class="button button--quiet" type="reset" id="product-reset">Bersihkan</button></div>
+					</form>
+				</article>
+				</section>
+				<section class="tabel-produk">
+				<article class="surface table-surface">
+					<div class="surface-heading"><div><p class="section-kicker">INVENTARIS</p><h3>Daftar produk</h3></div><span class="count-badge" id="products-count">0 produk</span></div>
+					<div class="table-wrap"><table>
+						<thead><tr><th>Produk</th><th>Sumber</th><th>Aroma</th><th>HPP/unit</th><th>Harga jual</th><th>Stok</th><th><span class="sr-only">Aksi</span></th></tr></thead>
+						<tbody id="products-tbody"><tr class="empty-row"><td colspan="7">Belum ada produk.</td></tr></tbody>
+					</table></div>
+				</article>
+				</section>
+			</section>
+
+			<section class="page-section" id="page-supplier" aria-labelledby="page-title" hidden>
+				<div class="section-toolbar"><div><p class="section-kicker">MITRA USAHA</p><h2>Kelola supplier</h2></div></div>
+				<article class="surface form-surface">
+					<div class="surface-heading"><div><p class="section-kicker">MASTER SUPPLIER</p><h3 id="supplier-form-title">Tambah supplier</h3></div></div>
+					<form id="supplier-form" class="entry-form">
+						<input type="hidden" id="supplier-id" name="id">
+						<label class="field" for="supplier-nama"><span>Nama supplier</span><input id="supplier-nama" name="nama" type="text" placeholder="Nama badan usaha" required></label>
+						<label class="field" for="supplier-npwp"><span>NPWP</span><input id="supplier-npwp" name="npwp" type="text" placeholder="00.000.000.0-000.000"></label>
+						<label class="field field--wide" for="supplier-alamat"><span>Alamat</span><textarea id="supplier-alamat" name="alamat" rows="2" placeholder="Alamat supplier"></textarea></label>
+						<div class="form-actions"><button class="button button--primary" type="submit" id="supplier-submit">Simpan supplier</button><button class="button button--quiet" type="reset" id="supplier-reset">Bersihkan</button></div>
+					</form>
+				</article>
+				<article class="surface table-surface">
+					<div class="surface-heading"><div><p class="section-kicker">DAFTAR MITRA</p><h3>Supplier terdaftar</h3></div><span class="count-badge" id="suppliers-count">0 supplier</span></div>
+					<div class="table-wrap"><table>
+						<thead><tr><th>Supplier</th><th>NPWP</th><th>Alamat</th><th><span class="sr-only">Aksi</span></th></tr></thead>
+						<tbody id="suppliers-tbody"><tr class="empty-row"><td colspan="4">Belum ada supplier.</td></tr></tbody>
+					</table></div>
+				</article>
+			</section>
+
+			<section class="page-section" id="page-pembelian" aria-labelledby="page-title" hidden>
+				<div class="section-toolbar"><div><p class="section-kicker">ARUS BARANG MASUK</p><h2>Catat pembelian</h2></div></div>
+				<article class="surface form-surface">
+					<div class="surface-heading"><div><p class="section-kicker">TRANSAKSI BARU</p><h3>Detail pembelian</h3></div><span class="tax-rate-pill">PPN 11%</span></div>
+					<form id="purchase-form" class="entry-form">
+						<label class="field" for="purchase-kategori"><span>Kategori</span><select id="purchase-kategori" name="kategori" required><option value="bahan_baku" selected>Bahan Baku (wax, oil, sumbu)</option><option value="bahan_jadi">Bahan Jadi (produk untuk dijual)</option><option value="lainnya">Lainnya (listrik, jasa, sewa, dll)</option></select></label>
+						<label class="field" for="purchase-supplier"><span>Supplier</span><select id="purchase-supplier" name="supplier_id" required><option value="">Pilih supplier</option></select></label>
+						<div class="purchase-product-fields field--wide" id="purchase-product-fields" hidden>
+							<label class="field" for="purchase-product"><span>Produk</span><select id="purchase-product" name="product_id"><option value="">Pilih produk</option></select></label>
+							<label class="field" for="purchase-qty"><span>Qty</span><input id="purchase-qty" name="qty" type="number" min="1" step="1" value="1"></label>
+						</div>
+						<label class="field" for="purchase-tanggal"><span>Tanggal</span><input id="purchase-tanggal" name="tanggal" type="date" required></label>
+						<label class="field" for="purchase-dpp"><span>DPP</span><input id="purchase-dpp" name="dpp" type="number" min="0" step="0.01" placeholder="0" required></label>
+						<label class="field field--wide" for="purchase-keterangan"><span>Keterangan</span><input id="purchase-keterangan" name="keterangan" type="text" placeholder="Catatan pembelian"></label>
+						<div class="form-actions"><button class="button button--primary" type="submit">Simpan pembelian</button></div>
+					</form>
+					<div class="calculation-preview" aria-live="polite" aria-label="Perhitungan pembelian">
+						<div><span>PPN Masukan</span><strong id="purchase-preview-ppn">Rp0</strong></div>
+						<div class="preview-total"><span>Total Pembelian</span><strong id="purchase-preview-total">Rp0</strong></div>
+					</div>
+				</article>
+				<article class="surface table-surface">
+					<div class="surface-heading"><div><p class="section-kicker">RIWAYAT</p><h3>Daftar pembelian</h3></div></div>
+					<div class="table-wrap"><table>
+						<thead><tr><th>Tanggal</th><th>Supplier</th><th>Kategori</th><th>Produk</th><th>Qty</th><th>DPP</th><th>PPN Masukan</th><th>Total</th><th><span class="sr-only">Aksi</span></th></tr></thead>
+						<tbody id="purchases-tbody"><tr class="empty-row"><td colspan="9">Belum ada transaksi pembelian.</td></tr></tbody>
+					</table></div>
+				</article>
+			</section>
+
+			<section class="page-section" id="page-penjualan" aria-labelledby="page-title" hidden>
+				<div class="section-toolbar"><div><p class="section-kicker">ARUS BARANG KELUAR</p><h2>Catat penjualan</h2></div></div>
+				<article class="surface form-surface">
+					<div class="surface-heading"><div><p class="section-kicker">TRANSAKSI BARU</p><h3>Detail penjualan</h3></div><span class="tax-rate-pill">PPN 11%</span></div>
+					<form id="sale-form" class="entry-form">
+						<label class="field" for="sale-product"><span>Produk</span><select id="sale-product" name="product_id" required><option value="">Pilih produk</option></select></label>
+						<label class="field" for="sale-tanggal"><span>Tanggal</span><input id="sale-tanggal" name="tanggal" type="date" required></label>
+						<label class="field" for="sale-customer"><span>Customer</span><input id="sale-customer" name="customer" type="text" placeholder="Nama customer"></label>
+						<label class="field" for="sale-qty"><span>Qty</span><input id="sale-qty" name="qty" type="number" min="1" step="1" value="1" required></label>
+						<div class="product-info-chips" id="sale-product-info" aria-live="polite" hidden>
+							<span class="info-chip">Harga jual <strong id="sale-info-harga-jual">Rp0</strong></span>
+							<span class="info-chip">HPP/unit <strong id="sale-info-harga-pokok">Rp0</strong></span>
+							<span class="info-chip">Stok <strong id="sale-info-stok">0</strong></span>
+						</div>
+						<div class="form-actions"><button class="button button--primary" type="submit">Simpan penjualan</button></div>
+					</form>
+					<div class="calculation-preview calculation-preview--sale" aria-live="polite" aria-label="Perhitungan penjualan">
+						<div><span>DPP</span><strong id="sale-preview-dpp">Rp0</strong></div>
+						<div><span>PPN Keluaran</span><strong id="sale-preview-ppn">Rp0</strong></div>
+						<div><span>HPP</span><strong id="sale-preview-hpp">Rp0</strong></div>
+						<div class="preview-total"><span>Total Penjualan</span><strong id="sale-preview-total">Rp0</strong></div>
+					</div>
+				</article>
+				<article class="surface table-surface">
+					<div class="surface-heading"><div><p class="section-kicker">RIWAYAT</p><h3>Daftar penjualan</h3></div></div>
+					<div class="table-wrap"><table>
+						<thead><tr><th>Tanggal</th><th>Customer</th><th>Produk</th><th>Qty</th><th>DPP</th><th>PPN Keluaran</th><th>HPP</th><th>Total</th><th><span class="sr-only">Aksi</span></th></tr></thead>
+						<tbody id="sales-tbody"><tr class="empty-row"><td colspan="9">Belum ada transaksi penjualan.</td></tr></tbody>
+					</table></div>
+				</article>
+			</section>
+
+			<section class="page-section" id="page-jurnal" aria-labelledby="page-title" hidden>
+				<div class="section-toolbar">
+					<div><p class="section-kicker">BUKU BESAR</p><h2>Jurnal umum</h2></div>
+					<div class="report-toolbar-actions">
+						<label class="field field--month" for="journal-month"><span>Periode</span><input id="journal-month" name="bulan" type="month" data-month-filter></label>
+						<button class="btn-cetak" type="button" onclick="cetakLaporan('jurnal')">🖨️ Cetak Laporan</button>
+					</div>
+				</div>
+				<article class="surface table-surface">
+					<div class="print-header">
+						<div class="print-brand"><span class="print-logo">🕯️🌸</span><div><h1>SEKAR AROMATHERAPY CANDLE</h1><p class="print-tagline">Handcrafted Aromatherapy Since 2024</p></div></div>
+						<div class="print-title"><h2>JURNAL UMUM</h2><p id="print-period-jurnal">Periode: -</p></div>
+					</div>
+					<div class="surface-heading"><div><p class="section-kicker">REKONSTRUKSI TRANSAKSI</p><h3>Rincian jurnal</h3></div><span class="count-badge" id="journals-count">0 baris</span></div>
+					<div class="table-wrap"><table>
+						<thead><tr><th>Tanggal</th><th>Ref</th><th>Akun</th><th class="numeric-cell">Debit</th><th class="numeric-cell">Kredit</th><th>Keterangan</th></tr></thead>
+						<tbody id="journals-tbody"><tr class="empty-row"><td colspan="6">Pilih periode untuk melihat jurnal.</td></tr></tbody>
+						<tfoot><tr class="journal-total-row"><th colspan="3">TOTAL</th><td class="numeric-cell"><strong id="journal-total-debit">Rp0</strong></td><td class="numeric-cell"><strong id="journal-total-kredit">Rp0</strong></td><td><span class="balance-badge" id="journal-balance">BALANCE ✓</span></td></tr></tfoot>
+					</table></div>
+					<div class="print-footer">
+						<div class="print-footer-left"><p>Dicetak: <span id="print-date-jurnal">-</span></p><p><strong>Sekar Aromatherapy Candle</strong></p></div>
+						<div class="print-footer-right"><p>Tanda Tangan:</p><div class="print-signature-line"></div><p>Pemilik / Penanggung Jawab</p></div>
+					</div>
+				</article>
+			</section>
+
+			<section class="page-section" id="page-ppn" aria-labelledby="page-title" hidden>
+				<div class="section-toolbar">
+					<div><p class="section-kicker">KEWAJIBAN PAJAK</p><h2>Laporan PPN</h2></div>
+					<div class="report-toolbar-actions">
+						<label class="field field--month" for="ppn-month"><span>Periode</span><input id="ppn-month" name="bulan" type="month" data-month-filter></label>
+						<button class="btn-cetak" type="button" onclick="cetakLaporan('ppn')">🖨️ Cetak Laporan</button>
+					</div>
+				</div>
+				<article class="surface table-surface report-surface">
+					<div class="print-header">
+						<div class="print-brand"><span class="print-logo">🕯️🌸</span><div><h1>SEKAR AROMATHERAPY CANDLE</h1><p class="print-tagline">Handcrafted Aromatherapy Since 2024</p></div></div>
+						<div class="print-title"><h2>LAPORAN PPN MASA PAJAK</h2><p id="print-period-ppn">Periode: -</p></div>
+					</div>
+					<div class="surface-heading"><div><p class="section-kicker">REKAPITULASI</p><h3>PPN Masukan &amp; Keluaran</h3></div><span class="tax-rate-pill">Tarif 11%</span></div>
+					<div class="table-wrap"><table>
+						<thead><tr><th>Komponen</th><th class="numeric-cell">DPP</th><th class="numeric-cell">PPN</th><th>Status</th></tr></thead>
+						<tbody id="ppn-report-tbody">
+							<tr><th scope="row">Penjualan</th><td class="numeric-cell" id="ppn-dpp-jual">Rp0</td><td class="numeric-cell" id="ppn-keluaran">Rp0</td><td><span class="status-badge status-badge--neutral">PPN Keluaran</span></td></tr>
+							<tr><th scope="row">Pembelian</th><td class="numeric-cell" id="ppn-dpp-beli">Rp0</td><td class="numeric-cell" id="ppn-masukan">Rp0</td><td><span class="status-badge status-badge--neutral">PPN Masukan</span></td></tr>
+							<tr class="ppn-balance-row"><th scope="row">Selisih PPN</th><td class="numeric-cell">—</td><td class="numeric-cell" id="ppn-selisih">Rp0</td><td><span class="status-badge status-badge--neutral" id="ppn-status">Nihil</span></td></tr>
+						</tbody>
+					</table></div>
+					<div class="print-footer">
+						<div class="print-footer-left"><p>Dicetak: <span id="print-date-ppn">-</span></p><p><strong>Sekar Aromatherapy Candle</strong></p></div>
+						<div class="print-footer-right"><p>Tanda Tangan:</p><div class="print-signature-line"></div><p>Pemilik / Penanggung Jawab</p></div>
+					</div>
+				</article>
+			</section>
+
+			<section class="page-section" id="page-laba-rugi" aria-labelledby="page-title" hidden>
+				<div class="section-toolbar">
+					<div><p class="section-kicker">KINERJA USAHA</p><h2>Laba rugi</h2></div>
+					<div class="report-toolbar-actions">
+						<label class="field field--month" for="profit-month"><span>Periode</span><input id="profit-month" name="bulan" type="month" data-month-filter></label>
+						<button class="btn-cetak" type="button" onclick="cetakLaporan('labarugi')">🖨️ Cetak Laporan</button>
+					</div>
+				</div>
+				<article class="surface table-surface report-surface">
+					<div class="print-header">
+						<div class="print-brand"><span class="print-logo">🕯️🌸</span><div><h1>SEKAR AROMATHERAPY CANDLE</h1><p class="print-tagline">Handcrafted Aromatherapy Since 2024</p></div></div>
+						<div class="print-title"><h2>LAPORAN LABA RUGI</h2><p id="print-period-labarugi">Periode: -</p></div>
+					</div>
+					<div class="surface-heading"><div><p class="section-kicker">RINGKASAN HASIL</p><h3>Laporan laba rugi</h3></div></div>
+					<div class="table-wrap"><table>
+						<thead><tr><th>Komponen</th><th class="numeric-cell">Jumlah</th></tr></thead>
+						<tbody id="lr-report-tbody">
+							<tr><th scope="row">Penjualan (DPP)</th><td class="numeric-cell" id="lr-penjualan">Rp0</td></tr>
+							<tr><th scope="row">HPP</th><td class="numeric-cell" id="lr-hpp">Rp0</td></tr>
+							<tr class="laba-kotor-row"><th scope="row">Laba Kotor</th><td class="numeric-cell" id="lr-laba-kotor">Rp0</td></tr>
+							<tr><th scope="row">Biaya Operasional</th><td class="numeric-cell" id="lr-biaya-lain">Rp0</td></tr>
+							<tr class="laba-bersih-row"><th scope="row">Laba Bersih</th><td class="numeric-cell" id="lr-laba-bersih">Rp0</td></tr>
+						</tbody>
+					</table></div>
+					<div class="print-footer">
+						<div class="print-footer-left"><p>Dicetak: <span id="print-date-labarugi">-</span></p><p><strong>Sekar Aromatherapy Candle</strong></p></div>
+						<div class="print-footer-right"><p>Tanda Tangan:</p><div class="print-signature-line"></div><p>Pemilik / Penanggung Jawab</p></div>
+					</div>
+				</article>
+			</section>
+
+			<footer class="main-footer">
+				<svg class="footer-flower-divider" viewBox="0 0 40 20" fill="none" aria-hidden="true"><path d="M2 11c6-5 10-5 17 0m2 0c7-5 11-5 17 0" stroke="#4a3a35" stroke-width="1.2" stroke-linecap="round"/><path d="M18 10c-2-5 2-7 4-2 3-4 6-1 3 2 5 1 3 5-1 4-1 5-5 4-5 0-4 2-6-2-1-4Z" fill="#a5d6a7" stroke="#4a3a35" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"/></svg>
+				<span>SEKAR AROMATHERAPY CANDLE</span>
+				<span>Handcrafted Aromatherapy Since 2024</span>
+			</footer>
+		</main>
+	</div>
+	<dialog class="stock-modal" id="add-stock-modal" aria-labelledby="add-stock-title">
+		<form class="stock-modal__card" id="add-stock-form">
+			<input type="hidden" id="add-stock-product-id">
+			<header class="stock-modal__header">
+				<div><p class="section-kicker">PERSEDIAAN PRODUK</p><h2 id="add-stock-title">Tambah Stok</h2></div>
+			<button class="stock-modal__close" type="button" id="add-stock-close" aria-label="Tutup dialog">×</button>
+			</header>
+			<div class="stock-modal__fields">
+				<label class="field" for="add-stock-qty"><span>Qty Tambahan</span><input id="add-stock-qty" name="qty_tambah" type="number" min="1" step="1" required></label>
+				<label class="field" for="add-stock-cost"><span>Biaya Produksi per unit</span><input id="add-stock-cost" name="biaya_per_unit" type="number" min="0" step="0.01" required></label>
+			</div>
+			<div class="stock-preview" aria-live="polite">
+				<div><span>Stok sekarang</span><strong id="stock-current-qty">0 unit</strong></div>
+				<div><span>HPP sekarang</span><strong id="stock-current-hpp">Rp 0</strong></div>
+				<div class="stock-preview__next"><span>Stok setelah</span><strong id="stock-next-qty">0 unit</strong></div>
+				<div class="stock-preview__average"><span>HPP baru (rata-rata)</span><strong id="stock-next-hpp">Rp 0</strong></div>
+			</div>
+			<fieldset class="stock-price-options">
+				<legend>Harga Jual</legend>
+				<label><input type="radio" name="stock-price-mode" value="keep" checked><span>Ikut harga jual sekarang (<strong id="stock-current-price">Rp 0</strong>)</span></label>
+				<label><input type="radio" name="stock-price-mode" value="update"><span>Update harga jual</span></label>
+				<label class="field stock-price-input" for="stock-new-sale-price" id="stock-new-price-field" hidden><span>Harga jual baru</span><input id="stock-new-sale-price" type="number" min="0" step="0.01" disabled></label>
+			</fieldset>
+			<footer class="stock-modal__actions">
+				<button class="button button--quiet" type="button" id="add-stock-cancel">Batal</button>
+				<button class="button button--primary" type="submit">Simpan Stok</button>
+			</footer>
+		</form>
+	</dialog>
+	<dialog class="aroma-modal" id="add-aroma-modal" aria-labelledby="add-aroma-title">
+		<form class="aroma-modal__card" id="add-aroma-form">
+			<header class="stock-modal__header">
+				<div><p class="section-kicker">KATALOG AROMA</p><h2 id="add-aroma-title">Tambah aroma baru</h2></div>
+				<button class="stock-modal__close" type="button" id="add-aroma-close" aria-label="Tutup dialog">×</button>
+			</header>
+			<label class="field" for="new-aroma-name"><span>Nama Aroma</span><input id="new-aroma-name" type="text" placeholder="cth: Lily" maxlength="100" required></label>
+			<footer class="stock-modal__actions">
+				<button class="button button--quiet" type="button" id="add-aroma-cancel">Batal</button>
+				<button class="button button--primary" type="submit">Simpan</button>
+			</footer>
+		</form>
+	</dialog>
+	<script src="script.js"></script>
+</body>
+</html>
