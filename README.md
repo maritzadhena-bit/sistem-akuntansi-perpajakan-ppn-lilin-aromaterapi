@@ -1,7 +1,7 @@
 # Sistem PPN Lilin Aromaterapi
 
 Kerangka aplikasi web untuk membantu usaha lilin aromaterapi berstatus PKP mencatat persediaan perpetual dan transaksi terkait PPN 11%. HPP setiap produk akan ditetapkan secara manual pada master produk.
-
+demo aplikasi https://maritzadhena-bit.github.io/sistem-akuntansi-perpajakan-ppn-lilin-aromaterapi/
 ## Teknologi
 
 - Frontend: HTML, CSS, dan JavaScript murni
